@@ -1,0 +1,17 @@
+compile = "composer install"
+run = "php -S 0.0.0.0:8000 -t ./vendor/phpoffice/phpspreadsheet/samples"
+modules = ["nix"]
+
+[nix]
+channel = "stable-24_05"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
+
+[deployment]
+run = ["sh", "-c", "php -S 0.0.0.0:8000 -t ./vendor/phpoffice/phpspreadsheet/samples"]
+build = ["sh", "-c", "composer install"]
+
+[[ports]]
+localPort = 8000
+externalPort = 80

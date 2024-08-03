@@ -1,0 +1,16 @@
+{
+    "require": {
+        "php": ">=8.2",
+        "phpoffice/phpspreadsheet": "^2.2"
+    },
+    "config": {
+        "preferred-install": {
+            "phpoffice/phpspreadsheet": "source"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "test -d samples || ln -s vendor/phpoffice/phpspreadsheet/samples samples"
+        ]
+    }
+}
